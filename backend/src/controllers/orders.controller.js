@@ -24,10 +24,11 @@ const crearPedido = async (req, res) => {
 
     try {
 
-        await Order.create(req.body);
+        const pedidoId = await Order.create(req.body);
 
         res.json({
-            mensaje: "Pedido creado"
+            mensaje: "Pedido creado",
+            pedido_id: pedidoId
         });
 
     } catch (error) {

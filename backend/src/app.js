@@ -12,6 +12,7 @@ const categoriesRoutes = require("./routes/categories.routes");
 const tablesRoutes = require("./routes/tables.routes");
 const inventoryRoutes = require("./routes/inventory.routes");
 const ordersRoutes = require("./routes/orders.routes");
+const detailOrderRoutes = require("./routes/detailOrder.routes");
 const kitchenRoutes = require("./routes/kitchen.routes");
 const reportsRoutes = require("./routes/reports.routes");
 
@@ -45,6 +46,7 @@ app.use("/api/categories", categoriesRoutes);
 app.use("/api/tables", tablesRoutes);
 app.use("/api/inventory", inventoryRoutes);
 app.use("/api/orders", ordersRoutes);
+app.use("/api/detail-orders", detailOrderRoutes);
 app.use("/api/kitchen", kitchenRoutes);
 app.use("/api/reports", reportsRoutes);
 

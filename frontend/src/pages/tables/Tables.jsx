@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 
 import TableForm from "../../components/TableForm";
+import QRCodeModal from "../../components/QRCodeModal";
 
 import {
     obtenerMesas,
@@ -12,6 +13,10 @@ export default function Tables() {
     const [mesas, setMesas] = useState([]);
 
     const [mesaEditar, setMesaEditar] = useState(null);
+
+    const [mostrarQR, setMostrarQR] = useState(false);
+
+    const [mesaQR, setMesaQR] = useState(null);
 
     useEffect(() => {
 
@@ -76,11 +81,11 @@ export default function Tables() {
                             <td>{mesa.capacidad}</td>
                             <td>{mesa.estado}</td>
 
-                            <td>
+                            <td className="space-x-2">
 
                                 <button
                                     onClick={() => setMesaEditar(mesa)}
-                                    className="bg-yellow-600 px-3 py-1 rounded mr-2"
+                                    className="bg-yellow-600 px-3 py-1 rounded"
                                 >
                                     Editar
                                 </button>
@@ -92,6 +97,18 @@ export default function Tables() {
                                     Eliminar
                                 </button>
 
+                                <button
+                                    onClick={() => {
+
+                                        setMesaQR(mesa.numero);
+                                        setMostrarQR(true);
+
+                                    }}
+                                    className="bg-green-700 hover:bg-green-600 px-3 py-1 rounded"
+                                >
+                                    📱 QR
+                                </button>
+
                             </td>
 
                         </tr>
@@ -101,6 +118,12 @@ export default function Tables() {
                 </tbody>
 
             </table>
+
+            <QRCodeModal
+                open={mostrarQR}
+                onClose={() => setMostrarQR(false)}
+                mesa={mesaQR}
+            />
 
         </div>
 

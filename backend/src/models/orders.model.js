@@ -38,7 +38,7 @@ const create = async (pedido) => {
         ]
     );
 
-    return result;
+    return result.insertId;
 
 };
 
