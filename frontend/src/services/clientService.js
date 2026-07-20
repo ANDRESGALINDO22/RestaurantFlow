@@ -1,8 +1,8 @@
 import axios from "axios";
 
-const API_PRODUCTS = "http://localhost:3000/api/products";
-const API_ORDERS = "http://localhost:3000/api/orders";
-const API_DETAIL = "http://localhost:3000/api/detail-orders";
+const API_PRODUCTS = "http://192.168.56.1:3000/api/products";
+const API_ORDERS = "http://192.168.56.1:3000/api/orders";
+const API_DETAIL = "http://192.168.56.1:3000/api/detail-orders";
 
 export const obtenerMenu = async () => {
 

@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API = "http://localhost:3000/api/tables";
+const API = "http://192.168.56.1:3000/api/tables";
 
 export const obtenerMesas = async () => {
 

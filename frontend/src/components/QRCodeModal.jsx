@@ -4,7 +4,7 @@ export default function QRCodeModal({ open, onClose, mesa }) {
 
     if (!open) return null;
 
-    const url = "192.168.1.40:5173/cliente/" + mesa;
+    const url = `https://restaurant-flow-three.vercel.app/cliente/${mesa}`;
 
     return (
 
