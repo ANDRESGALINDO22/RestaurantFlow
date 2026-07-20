@@ -228,47 +228,43 @@ export default function ClientMenu() {
                 Mesa #{mesa}
             </h2>
 
-            <div className="grid grid-cols-3 gap-6 mt-12">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-12">
 
-                {
+    {productos.map((producto) => (
 
-                    productos.map((producto) => (
+        <div
+            key={producto.id}
+            className="bg-slate-900 rounded-2xl border border-red-700 p-6 flex flex-col"
+        >
 
-                        <div
-                            key={producto.id}
-                            className="bg-slate-900 rounded-2xl border border-red-700 p-6 hover:scale-105 transition"
-                        >
-
-                            <div className="text-6xl text-center">
-                                🍔
-                            </div>
-
-                            <h2 className="text-2xl font-bold mt-5">
-                                {producto.nombre}
-                            </h2>
-
-                            <p className="text-gray-400 mt-3">
-                                {producto.descripcion}
-                            </p>
-
-                            <h3 className="text-red-500 text-3xl font-bold mt-5">
-                                ${Number(producto.precio).toLocaleString()}
-                            </h3>
-
-                            <button
-                                onClick={() => agregarProducto(producto)}
-                                className="mt-6 w-full bg-red-700 hover:bg-red-600 py-3 rounded-xl font-bold"
-                            >
-                                Agregar
-                            </button>
-
-                        </div>
-
-                    ))
-
-                }
-
+            <div className="text-6xl text-center">
+                🍔
             </div>
+
+            <h2 className="text-xl font-bold text-center mt-4">
+                {producto.nombre}
+            </h2>
+
+            <p className="text-gray-400 text-center text-sm mt-2 flex-1">
+                {producto.descripcion}
+            </p>
+
+            <h3 className="text-red-500 text-3xl font-bold text-center mt-4">
+                ${Number(producto.precio).toLocaleString()}
+            </h3>
+
+            <button
+                onClick={() => agregarProducto(producto)}
+                className="mt-5 w-full bg-red-700 hover:bg-red-600 py-3 rounded-xl font-bold"
+            >
+                Agregar
+            </button>
+
+        </div>
+
+    ))}
+
+</div>
 
             <div className="mt-12 bg-slate-900 rounded-2xl border border-red-700 p-8">
 
