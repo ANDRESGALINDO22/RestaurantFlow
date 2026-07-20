@@ -20,22 +20,48 @@ export default function ClientMenu() {
 
     }, []);
 
-    const cargarMenu = async () => {
+   const cargarMenu = async () => {
 
-        try {
+    try {
 
-            const data = await obtenerMenu();
+        const data = await obtenerMenu();
 
-            setProductos(data);
+        setProductos(data);
 
-        } catch (error) {
+    } catch (error) {
 
-            console.log(error);
+        console.log("Backend no disponible, cargando menú de demostración.");
 
-        }
+        setProductos([
+            {
+                id: 1,
+                nombre: "Hamburguesa Clásica",
+                descripcion: "Carne de res, queso y papas",
+                precio: 18000
+            },
+            {
+                id: 2,
+                nombre: "Pizza Personal",
+                descripcion: "Jamón y queso",
+                precio: 22000
+            },
+            {
+                id: 3,
+                nombre: "Perro Caliente",
+                descripcion: "Salchicha, queso y salsas",
+                precio: 12000
+            },
+            {
+                id: 4,
+                nombre: "Gaseosa",
+                descripcion: "400 ml",
+                precio: 4000
+            }
+        ]);
 
-    };
+    }
 
+};
     const calcularTotal = (lista) => {
 
         const nuevoTotal = lista.reduce(
