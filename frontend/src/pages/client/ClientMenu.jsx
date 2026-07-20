@@ -210,7 +210,7 @@ export default function ClientMenu() {
 
             console.log(error);
 
-            alert("Pedido enviado con éxito!\n\nNuestro equipo ya está preparando tu comida. Gracias por elegir RestaurantFlow. 🍟🍔");
+            alert("Error al enviar pedido");
 
         }
 
