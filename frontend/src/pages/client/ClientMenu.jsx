@@ -210,7 +210,7 @@ export default function ClientMenu() {
 
             console.log(error);
 
-            alert("Error al enviar pedido");
+            alert("🎉 ¡Pedido enviado con éxito!\n\nNuestro equipo ya está preparando tu comida. 🍔🍟");
 
         }
 
